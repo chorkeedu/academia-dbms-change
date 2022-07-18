@@ -105,6 +105,10 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+        </dependency>
+        <dependency>
             <artifactId>h2</artifactId>
             <groupId>com.h2database</groupId>
         </dependency>

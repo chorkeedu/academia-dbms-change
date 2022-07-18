@@ -152,14 +152,38 @@ h2: org.h2.Driver
 ```bash
 mkdir -p ~/.chorke/academia/etc/cfg/liquibase/dbms
 cp src/test/resources/liquibase/*.properteis ~/.chorke/academia/etc/cfg/liquibase/dbms
-vim ~/.chorke/academia/etc/cfg/liquibase/dbms/dev.properties
 
-:'
-%s/username: academia/username: academia/gc
-%s/password: finology/password: finology/gc
-%s/referenceUsername: academia/referenceUsername: academia/gc
-%s/referencePassword: finology/referencePassword: finology/gc
-''
+# postgresql
+cat <<EOF > ~/.chorke/academia/etc/cfg/liquibase/dbms/dev.properties
+url: jdbc:postgresql://localhost:5432/hr_dev
+driver: org.postgresql.Driver
+username: academia
+password: finology
+EOF
+
+# postgresql
+cat <<EOF > ~/.chorke/academia/etc/cfg/liquibase/dbms/dev.properties
+url: jdbc:mysql://localhost:3306/hr_dev?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf-8
+driver: com.mysql.jdbc.Driver
+username: academia
+password: finology
+EOF
+
+# hsqldb
+cat <<EOF > ~/.chorke/academia/etc/cfg/liquibase/dbms/dev.properties
+url: jdbc:hsqldb:file:~/.chorke/academia/var/hsqldb/dbms/hr_dev;sql.syntax_mys=true;user=academia;password=finology
+driver: org.hsqldb.jdbc.JDBCDriver
+username: academia
+password: finology
+EOF
+
+# h2
+cat <<EOF > ~/.chorke/academia/etc/cfg/liquibase/dbms/dev.properties
+url: jdbc:h2:file:~/.chorke/academia/var/h2/dbms/hr_dev;db_close_on_exit=false;mode=MySQL;user=academia;password=finology
+driver: org.h2.Driver
+username: academia
+password: finology
+EOF
 ```
 
 ### Contact
