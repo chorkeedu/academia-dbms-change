@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd"><!--
+================================================================================
+db.changelog-v1.0.00_20180807_110011.xml
+================================================================================
+@author    Academia<devs@chorke.org>
+@vendor    Chorke Academia, Inc.
+@web       chorke.org
+@version   1.0.00.GA
+@since     1.0.00.GA
+================================================================================
+--> <changeSet author="academia" labels="m00,ddl,tab" context="dev,qac,uat,pro" id="1533639611000-1" logicalFilePath="db.changelog-v1.0.00_20180807_110011.xml">
+        <createTable tableName="genders">
+            <column name="gender_code" type="VARCHAR(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="gender_name" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="academia" labels="m00,ddl,tab" context="dev,qac,uat,pro" id="1533639611000-2" logicalFilePath="db.changelog-v1.0.00_20180807_110011.xml">
+        <createTable tableName="marital_status">
+            <column name="marital_status_code" type="VARCHAR(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="marital_status_name" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="academia" labels="m00,dml,ini" context="dev,qac,uat,pro" id="1533639611000-3" logicalFilePath="db.changelog-v1.0.00_20180807_110011.xml">
+        <loadData commentLineStartsWith="#" encoding="UTF-8" file="20180807_110011/genders__dev_qac_uat_pro.csv" relativeToChangelogFile="true" quotchar="&quot;" separator="," tableName="genders">
+            <column header="gender_code" name="gender_code" type="STRING"/>
+            <column header="gender_name" name="gender_name" type="STRING"/>
+        </loadData>
+        <rollback>
+            <delete tableName="genders"/>
+        </rollback>
+    </changeSet>
+    <changeSet author="academia" labels="m00,dml,ini" context="dev,qac,uat,pro" id="1533639611000-4" logicalFilePath="db.changelog-v1.0.00_20180807_110011.xml">
+        <loadData commentLineStartsWith="#" encoding="UTF-8" file="20180807_110011/marital_status__dev_qac_uat_pro.csv" relativeToChangelogFile="true" quotchar="&quot;" separator="," tableName="marital_status">
+            <column header="marital_status_code" name="marital_status_code" type="STRING"/>
+            <column header="marital_status_name" name="marital_status_name" type="STRING"/>
+        </loadData>
+        <rollback>
+            <delete tableName="marital_status"/>
+        </rollback>
+    </changeSet>
+    <changeSet author="academia" labels="m00,ddl,pkc" context="dev,qac,uat,pro" id="1533639611000-5" logicalFilePath="db.changelog-v1.0.00_20180807_110011.xml">
+        <addPrimaryKey columnNames="gender_code" constraintName="PRIMARY" tableName="genders"/>
+    </changeSet>
+    <changeSet author="academia" labels="m00,ddl,pkc" context="dev,qac,uat,pro" id="1533639611000-6" logicalFilePath="db.changelog-v1.0.00_20180807_110011.xml">
+        <addPrimaryKey columnNames="marital_status_code" constraintName="PRIMARY" tableName="marital_status"/>
+    </changeSet>
+    <changeSet author="academia" id="1533639611000-7" logicalFilePath="db.changelog-v1.0.00_20180807_110011.xml">
+        <tagDatabase tag="20180807"/>
+    </changeSet>
+</databaseChangeLog>

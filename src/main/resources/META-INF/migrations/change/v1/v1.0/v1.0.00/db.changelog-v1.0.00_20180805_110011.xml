@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd"><!--
+================================================================================
+db.changelog-v1.0.00_20180805_110011.xml
+================================================================================
+@author    Academia<devs@chorke.org>
+@vendor    Chorke Academia, Inc.
+@web       chorke.org
+@version   1.0.00.GA
+@since     1.0.00.GA
+================================================================================
+--> <changeSet author="academia" labels="m00,ddl,ndx" context="dev,qac,uat,pro" id="1533466811000-1" logicalFilePath="db.changelog-v1.0.00_20180805_110011.xml">
+        <createIndex indexName="countr_reg_fk" tableName="countries">
+            <column name="region_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="academia" labels="m00,ddl,ndx" context="dev,qac,uat,pro" id="1533466811000-2" logicalFilePath="db.changelog-v1.0.00_20180805_110011.xml">
+        <createIndex indexName="dept_location_ix" tableName="departments">
+            <column name="location_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="academia" labels="m00,ddl,ndx" context="dev,qac,uat,pro" id="1533466811000-3" logicalFilePath="db.changelog-v1.0.00_20180805_110011.xml">
+        <createIndex indexName="dept_mgr_fk" tableName="departments">
+            <column name="manager_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="academia" labels="m00,ddl,ndx" context="dev,qac,uat,pro" id="1533466811000-4" logicalFilePath="db.changelog-v1.0.00_20180805_110011.xml">
+        <createIndex indexName="emp_department_ix" tableName="employees">
+            <column name="department_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="academia" labels="m00,ddl,ndx" context="dev,qac,uat,pro" id="1533466811000-5" logicalFilePath="db.changelog-v1.0.00_20180805_110011.xml">
+        <createIndex indexName="emp_job_fk" tableName="employees">
+            <column name="job_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="academia" labels="m00,ddl,ndx" context="dev,qac,uat,pro" id="1533466811000-6" logicalFilePath="db.changelog-v1.0.00_20180805_110011.xml">
+        <createIndex indexName="emp_manager_ix" tableName="employees">
+            <column name="manager_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="academia" labels="m00,ddl,ndx" context="dev,qac,uat,pro" id="1533466811000-7" logicalFilePath="db.changelog-v1.0.00_20180805_110011.xml">
+        <createIndex indexName="emp_name_ix" tableName="employees">
+            <column name="last_name"/>
+            <column name="first_name"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="academia" labels="m00,ddl,ndx" context="dev,qac,uat,pro" id="1533466811000-8" logicalFilePath="db.changelog-v1.0.00_20180805_110011.xml">
+        <createIndex indexName="jhist_department_ix" tableName="job_history">
+            <column name="department_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="academia" labels="m00,ddl,ndx" context="dev,qac,uat,pro" id="1533466811000-9" logicalFilePath="db.changelog-v1.0.00_20180805_110011.xml">
+        <createIndex indexName="jhist_employee_ix" tableName="job_history">
+            <column name="employee_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="academia" labels="m00,ddl,ndx" context="dev,qac,uat,pro" id="1533466811000-10" logicalFilePath="db.changelog-v1.0.00_20180805_110011.xml">
+        <createIndex indexName="jhist_job_fk" tableName="job_history">
+            <column name="job_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="academia" labels="m00,ddl,ndx" context="dev,qac,uat,pro" id="1533466811000-11" logicalFilePath="db.changelog-v1.0.00_20180805_110011.xml">
+        <createIndex indexName="loc_city_ix" tableName="locations">
+            <column name="city"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="academia" labels="m00,ddl,ndx" context="dev,qac,uat,pro" id="1533466811000-12" logicalFilePath="db.changelog-v1.0.00_20180805_110011.xml">
+        <createIndex indexName="loc_country_ix" tableName="locations">
+            <column name="country_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="academia" labels="m00,ddl,ndx" context="dev,qac,uat,pro" id="1533466811000-13" logicalFilePath="db.changelog-v1.0.00_20180805_110011.xml">
+        <createIndex indexName="loc_state_province_ix" tableName="locations">
+            <column name="state_province"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="academia" id="1533466811000-14" logicalFilePath="db.changelog-v1.0.00_20180805_110011.xml">
+        <tagDatabase tag="20180805"/>
+    </changeSet>
+</databaseChangeLog>

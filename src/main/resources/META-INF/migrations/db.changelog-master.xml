@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd"><!--
+================================================================================
+db.changelog-master.xml
+================================================================================
+@author    Academia<devs@chorke.org>
+@vendor    Chorke Academia, Inc.
+@web       chorke.org
+@version   1.0.00.GA
+@since     1.0.00.GA
+================================================================================
+--> <includeAll path="config" relativeToChangelogFile="true"/>
+    <include file="change/db.changelog-v1.xml" relativeToChangelogFile="true"/><!--
+    <include file="change/db.changelog-v2.xml" relativeToChangelogFile="true"/>
+    <include file="change/db.changelog-v3.xml" relativeToChangelogFile="true"/>
+    <include file="change/db.changelog-v4.xml" relativeToChangelogFile="true"/>
+    <include file="change/db.changelog-v5.xml" relativeToChangelogFile="true"/>
+    <include file="change/db.changelog-v6.xml" relativeToChangelogFile="true"/>
+    <include file="change/db.changelog-v7.xml" relativeToChangelogFile="true"/>
+    <include file="change/db.changelog-v8.xml" relativeToChangelogFile="true"/>
+    <include file="change/db.changelog-v9.xml" relativeToChangelogFile="true"/>-->
+</databaseChangeLog>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd"><!--
+================================================================================
+db.changelog-v1.0.00_20180806_110011.xml
+================================================================================
+@author    Academia<devs@chorke.org>
+@vendor    Chorke Academia, Inc.
+@web       chorke.org
+@version   1.0.00.GA
+@since     1.0.00.GA
+================================================================================
+--> <changeSet author="academia" labels="m00,ddl,fkc" context="dev,qac,uat,pro" id="1533553211000-1" logicalFilePath="db.changelog-v1.0.00_20180806_110011.xml">
+        <addForeignKeyConstraint baseColumnNames="region_id" baseTableName="countries" constraintName="countr_reg_fk" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="region_id" referencedTableName="regions"/>
+    </changeSet>
+    <changeSet author="academia" labels="m00,ddl,fkc" context="dev,qac,uat,pro" id="1533553211000-2" logicalFilePath="db.changelog-v1.0.00_20180806_110011.xml">
+        <addForeignKeyConstraint baseColumnNames="location_id" baseTableName="departments" constraintName="dept_loc_fk" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="location_id" referencedTableName="locations"/>
+    </changeSet>
+    <changeSet author="academia" labels="m00,ddl,fkc" context="dev,qac,uat,pro" id="1533553211000-3" logicalFilePath="db.changelog-v1.0.00_20180806_110011.xml">
+        <addForeignKeyConstraint baseColumnNames="manager_id" baseTableName="departments" constraintName="dept_mgr_fk" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="employee_id" referencedTableName="employees"/>
+    </changeSet>
+    <changeSet author="academia" labels="m00,ddl,fkc" context="dev,qac,uat,pro" id="1533553211000-4" logicalFilePath="db.changelog-v1.0.00_20180806_110011.xml">
+        <addForeignKeyConstraint baseColumnNames="department_id" baseTableName="employees" constraintName="emp_dept_fk" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="department_id" referencedTableName="departments"/>
+    </changeSet>
+    <changeSet author="academia" labels="m00,ddl,fkc" context="dev,qac,uat,pro" id="1533553211000-5" logicalFilePath="db.changelog-v1.0.00_20180806_110011.xml">
+        <addForeignKeyConstraint baseColumnNames="job_id" baseTableName="employees" constraintName="emp_job_fk" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="job_id" referencedTableName="jobs"/>
+    </changeSet>
+    <changeSet author="academia" labels="m00,ddl,fkc" context="dev,qac,uat,pro" id="1533553211000-6" logicalFilePath="db.changelog-v1.0.00_20180806_110011.xml">
+        <addForeignKeyConstraint baseColumnNames="manager_id" baseTableName="employees" constraintName="emp_manager_fk" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="employee_id" referencedTableName="employees"/>
+    </changeSet>
+    <changeSet author="academia" labels="m00,ddl,fkc" context="dev,qac,uat,pro" id="1533553211000-7" logicalFilePath="db.changelog-v1.0.00_20180806_110011.xml">
+        <addForeignKeyConstraint baseColumnNames="department_id" baseTableName="job_history" constraintName="jhist_dept_fk" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="department_id" referencedTableName="departments"/>
+    </changeSet>
+    <changeSet author="academia" labels="m00,ddl,fkc" context="dev,qac,uat,pro" id="1533553211000-8" logicalFilePath="db.changelog-v1.0.00_20180806_110011.xml">
+        <addForeignKeyConstraint baseColumnNames="employee_id" baseTableName="job_history" constraintName="jhist_emp_fk" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="employee_id" referencedTableName="employees"/>
+    </changeSet>
+    <changeSet author="academia" labels="m00,ddl,fkc" context="dev,qac,uat,pro" id="1533553211000-9" logicalFilePath="db.changelog-v1.0.00_20180806_110011.xml">
+        <addForeignKeyConstraint baseColumnNames="job_id" baseTableName="job_history" constraintName="jhist_job_fk" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="job_id" referencedTableName="jobs"/>
+    </changeSet>
+    <changeSet author="academia" labels="m00,ddl,fkc" context="dev,qac,uat,pro" id="1533553211000-10" logicalFilePath="db.changelog-v1.0.00_20180806_110011.xml">
+        <addForeignKeyConstraint baseColumnNames="country_id" baseTableName="locations" constraintName="loc_c_id_fk" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="country_id" referencedTableName="countries"/>
+    </changeSet>
+    <changeSet author="academia" id="1533553211000-11" logicalFilePath="db.changelog-v1.0.00_20180806_110011.xml">
+        <tagDatabase tag="20180806"/>
+    </changeSet>
+</databaseChangeLog>

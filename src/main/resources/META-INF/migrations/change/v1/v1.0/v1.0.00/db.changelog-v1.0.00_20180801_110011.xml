@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd"><!--
+================================================================================
+db.changelog-v1.0.00_20180801_110011.xml
+================================================================================
+@author    Academia<devs@chorke.org>
+@vendor    Chorke Academia, Inc.
+@web       chorke.org
+@version   1.0.00.GA
+@since     1.0.00.GA
+================================================================================
+--> <changeSet author="academia" labels="m00,ddl,tab" context="dev,qac,uat,pro" id="1533121211000-1" logicalFilePath="db.changelog-v1.0.00_20180801_110011.xml">
+        <createTable tableName="countries">
+            <column name="country_id" type="CHAR(2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="country_name" type="VARCHAR(40)"/>
+            <column name="region_id" type="DECIMAL(22)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="academia" labels="m00,ddl,tab" context="dev,qac,uat,pro" id="1533121211000-2" logicalFilePath="db.changelog-v1.0.00_20180801_110011.xml">
+        <createTable tableName="departments">
+            <column name="department_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="department_name" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="manager_id" type="INT"/>
+            <column name="location_id" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="academia" labels="m00,ddl,tab" context="dev,qac,uat,pro" id="1533121211000-3" logicalFilePath="db.changelog-v1.0.00_20180801_110011.xml">
+        <createTable tableName="employees">
+            <column name="employee_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="first_name" type="VARCHAR(20)"/>
+            <column name="last_name" type="VARCHAR(25)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="email" type="VARCHAR(25)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="phone_number" type="VARCHAR(20)"/>
+            <column name="hire_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="job_id" type="VARCHAR(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="salary" type="DECIMAL(8, 2)"/>
+            <column name="commission_pct" type="DECIMAL(2, 2)"/>
+            <column name="manager_id" type="INT"/>
+            <column name="department_id" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="academia" labels="m00,ddl,tab" context="dev,qac,uat,pro" id="1533121211000-4" logicalFilePath="db.changelog-v1.0.00_20180801_110011.xml">
+        <createTable tableName="job_history">
+            <column name="employee_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="start_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="end_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="job_id" type="VARCHAR(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="department_id" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="academia" labels="m00,ddl,tab" context="dev,qac,uat,pro" id="1533121211000-5" logicalFilePath="db.changelog-v1.0.00_20180801_110011.xml">
+        <createTable tableName="jobs">
+            <column name="job_id" type="VARCHAR(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="job_title" type="VARCHAR(35)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="min_salary" type="INT"/>
+            <column name="max_salary" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="academia" labels="m00,ddl,tab" context="dev,qac,uat,pro" id="1533121211000-6" logicalFilePath="db.changelog-v1.0.00_20180801_110011.xml">
+        <createTable tableName="locations">
+            <column name="location_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="street_address" type="VARCHAR(40)"/>
+            <column name="postal_code" type="VARCHAR(12)"/>
+            <column name="city" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="state_province" type="VARCHAR(25)"/>
+            <column name="country_id" type="CHAR(2)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="academia" labels="m00,ddl,tab" context="dev,qac,uat,pro" id="1533121211000-7" logicalFilePath="db.changelog-v1.0.00_20180801_110011.xml">
+        <createTable tableName="regions">
+            <column name="region_id" type="DECIMAL(22)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="region_name" type="VARCHAR(25)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="academia" id="1533121211000-8" logicalFilePath="db.changelog-v1.0.00_20180801_110011.xml">
+        <tagDatabase tag="20180801"/>
+    </changeSet>
+</databaseChangeLog>

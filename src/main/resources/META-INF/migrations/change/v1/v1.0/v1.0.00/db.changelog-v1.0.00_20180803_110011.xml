@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd"><!--
+================================================================================
+db.changelog-v1.0.00_20180803_110011.xml
+================================================================================
+@author    Academia<devs@chorke.org>
+@vendor    Chorke Academia, Inc.
+@web       chorke.org
+@version   1.0.00.GA
+@since     1.0.00.GA
+================================================================================
+--> <changeSet author="academia" labels="m00,ddl,pkc" context="dev,qac,uat,pro" id="1533294011000-1" logicalFilePath="db.changelog-v1.0.00_20180803_110011.xml">
+        <addPrimaryKey columnNames="country_id" constraintName="country_id_pk" tableName="countries"/>
+    </changeSet>
+    <changeSet author="academia" labels="m00,ddl,pkc" context="dev,qac,uat,pro" id="1533294011000-2" logicalFilePath="db.changelog-v1.0.00_20180803_110011.xml">
+        <addPrimaryKey columnNames="department_id" constraintName="department_id_pk" tableName="departments"/>
+    </changeSet>
+    <changeSet author="academia" labels="m00,ddl,pkc" context="dev,qac,uat,pro" id="1533294011000-3" logicalFilePath="db.changelog-v1.0.00_20180803_110011.xml">
+        <addPrimaryKey columnNames="employee_id" constraintName="employee_id_pk" tableName="employees"/>
+    </changeSet>
+    <changeSet author="academia" labels="m00,ddl,pkc" context="dev,qac,uat,pro" id="1533294011000-4" logicalFilePath="db.changelog-v1.0.00_20180803_110011.xml">
+        <addPrimaryKey columnNames="employee_id, start_date" constraintName="employee_id_start_date_pk" tableName="job_history"/>
+    </changeSet>
+    <changeSet author="academia" labels="m00,ddl,pkc" context="dev,qac,uat,pro" id="1533294011000-5" logicalFilePath="db.changelog-v1.0.00_20180803_110011.xml">
+        <addPrimaryKey columnNames="job_id" constraintName="job_id_pk" tableName="jobs"/>
+    </changeSet>
+    <changeSet author="academia" labels="m00,ddl,pkc" context="dev,qac,uat,pro" id="1533294011000-6" logicalFilePath="db.changelog-v1.0.00_20180803_110011.xml">
+        <addPrimaryKey columnNames="location_id" constraintName="location_id_pk" tableName="locations"/>
+    </changeSet>
+    <changeSet author="academia" labels="m00,ddl,pkc" context="dev,qac,uat,pro" id="1533294011000-7" logicalFilePath="db.changelog-v1.0.00_20180803_110011.xml">
+        <addPrimaryKey columnNames="region_id" constraintName="region_id_pk" tableName="regions"/>
+    </changeSet>
+    <changeSet author="academia" id="1533294011000-8" logicalFilePath="db.changelog-v1.0.00_20180803_110011.xml">
+        <tagDatabase tag="20180803"/>
+    </changeSet>
+</databaseChangeLog>
