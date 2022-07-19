@@ -102,6 +102,12 @@ EOF
 sudo su postgres
 
 cat << EOF | psql -U postgres
+SELECT pg_terminate_backend(pid)
+FROM pg_stat_activity WHERE datname IN
+('hr_dev', 'hr_qac', 'hr_uat', 'hr_pro');
+EOF
+
+cat << EOF | psql -U postgres
 DROP DATABASE IF EXISTS hr_dev;
 DROP DATABASE IF EXISTS hr_qac;
 DROP DATABASE IF EXISTS hr_uat;
