@@ -58,7 +58,7 @@
   │                               ├─ locations__dev_qac_uat_pro.csv
   │                               └─ regions__dev_qac_uat_pro.csv
   └─ target/
-      ├─ academia-dbms-change-0.0.00.GA.jar
+      ├─ academia-dbms-change-1.0.00.GA.jar
       ├─ db.changelog-v1.0.00_20180814_070816.xml
       └─ 20180814_070816/
           ├─ countries.csv
