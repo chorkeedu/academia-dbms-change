@@ -161,7 +161,7 @@ username: academia
 password: finology
 EOF
 
-# postgresql
+# mysql
 cat <<EOF > ~/.chorke/academia/etc/cfg/liquibase/dbms/dev.properties
 url: jdbc:mysql://localhost:3306/hr_dev?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf-8
 driver: com.mysql.jdbc.Driver
